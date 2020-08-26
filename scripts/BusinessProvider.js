@@ -114,3 +114,15 @@ const businesses = [
   export const businessProviders = () => {
       return businesses.slice();
   }
+  
+  const element = document.querySelector(".agents");
+
+  export const names = () => {
+    businesses.forEach(name => {
+      element.innerHTML += `
+      <h2>Agents</h2>
+      <p>Name: ${name.purchasingAgent.nameFirst} ${name.purchasingAgent.nameLast}</p>
+      <p>Company: ${name.companyName}</p>
+      <p>Phone: ${name.phoneWork}</p>`
+    })
+  }
